@@ -10,7 +10,7 @@ oxa: oxa:zyBWlmnbnltDRPejFqwi/pbXeJXnaITQbVuUlGull
 
 # Module 1
 
-+++ {"oxa":"oxa:zyBWlmnbnltDRPejFqwi/FtMoswhFlFZxePlGYNO0.16"}
++++ {"oxa":"oxa:zyBWlmnbnltDRPejFqwi/FtMoswhFlFZxePlGYNO0.17"}
 
 This document contains the basic steps needed to create a distribution-ready python project. The intent in this document as well as future documents is to provide concise details of how to perform the tasks while minimizing unnecessary background details. An overview of the material covered in this module is below.
 
