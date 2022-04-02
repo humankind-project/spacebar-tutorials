@@ -10,13 +10,13 @@ oxa: oxa:zyBWlmnbnltDRPejFqwi/Z5OC1a3Z4cqlzVa3kyn2
 
 # Module 2
 
-+++ {"oxa":"oxa:zyBWlmnbnltDRPejFqwi/xlRNMSxS0ygjpnHtVXhU.1"}
++++ {"oxa":"oxa:zyBWlmnbnltDRPejFqwi/xlRNMSxS0ygjpnHtVXhU.2"}
 
 Module 2 focuses on the development of vector operations within our script. The majority of the calculations performed in future astrodynamics modules will require vector math, so it is important to build that foundational library early.
 
 # Create Paths
 
-Start by creating a path within your package that creates an intuitive trail for the user. This will be a script full of linear algebra functions used for the entire package, so let’s use spacebar > math > linalg.py to get a folder structure similar to the list seen below.
+Start by creating a path within your package that creates an intuitive trail for the user. This will be a script full of linear algebra functions used for the entire package, so let’s use spacebar > math > linalg.py to get a folder structure similar to the list seen below. Note we will also add the corresponding test files at this point.
 
 * spacebar
   * spacebar
@@ -25,6 +25,9 @@ Start by creating a path within your package that creates an intuitive trail for
       * \__init_\_.py
     * astro
     * tests
+      * math
+        * test_linalg.py
+        * \__init_\_.py
 
 # Code
 
@@ -216,5 +219,85 @@ class Vector3D:
             Vector parallel to self with a scaled magnitude 
         """
         return Vector3D(self.x*multiple, self.y*multiple, self.z*multiple)
+```
+
+## Tests
+
+Now we can add our test module.
+
+```python
+import unittest
+from math import sqrt
+
+from spacebar.math.linalg import Vector3D
+
+class TestVector3D(unittest.TestCase):
+
+    VECTOR_1 = Vector3D(4, 2, 42)
+    VECTOR_2 = Vector3D(4, 42, 2)
+
+    def test_plus(self):
+        """
+        Test to verify vector addition
+        """
+        answer = self.VECTOR_1.plus(self.VECTOR_2)
+        self.assertAlmostEqual(8, answer.x)
+        self.assertAlmostEqual(44, answer.y)
+        self.assertAlmostEqual(44, answer.z)
+
+    def test_minus(self):
+        """
+        Test to verify vector subtraction
+        """
+        answer = self.VECTOR_1.minus(self.VECTOR_2)
+        self.assertAlmostEqual(0, answer.x)
+        self.assertAlmostEqual(-40, answer.y)
+        self.assertAlmostEqual(40, answer.z)
+
+    def test_dot(self):
+        """
+        Test to verify vector dot product
+        """
+        answer = self.VECTOR_1.dot(self.VECTOR_2)
+        self.assertAlmostEqual(184, answer)
+
+    def test_cross(self):
+        """
+        Test to verify vector cross product
+        """
+        answer = self.VECTOR_1.cross(self.VECTOR_2)
+        self.assertAlmostEqual(-1760, answer.x)
+        self.assertAlmostEqual(160, answer.y)
+        self.assertAlmostEqual(160, answer.z)
+
+    def test_magnitude(self):
+        """
+        Test to verify the vector magnitude
+        """
+        self.assertAlmostEqual(2*sqrt(446), self.VECTOR_1.magnitude())
+
+    def test_normalize(self):
+        """
+        Test to verify the unit vector
+        """
+        u = self.VECTOR_1.normalize()
+        self.assertAlmostEqual(2/sqrt(446), u.x)
+        self.assertAlmostEqual(1/sqrt(446), u.y)
+        self.assertAlmostEqual(21/sqrt(446), u.z)
+
+    def test_scale(self):
+        """
+        Test to verify the ability to scale a vector
+        """
+        v = self.VECTOR_1.scale(2)
+        self.assertAlmostEqual(8, v.x)
+        self.assertAlmostEqual(4, v.y)
+        self.assertAlmostEqual(84, v.z)
+```
+
+Now finish up by running your new test script to confirm success. Navigate to the top level directory and execute the following command from the terminal.
+
+```shell
+python -m unittest .
 ```
 

@@ -103,6 +103,21 @@ const thebe_selector_output = ".output, .cell_output"
    Module 2
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-3.html">
+   Module 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-4.html">
+   Module 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-5.html">
+   Module 5
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -550,17 +565,20 @@ const thebe_selector_output = ".output, .cell_output"
 <section id="edit-bodies-py">
 <h3>Edit <a class="reference external" href="http://bodies.py">bodies.py</a><a class="headerlink" href="#edit-bodies-py" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Earth</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Class used to represent Earth.  Values are defined using EGM96 geopotential</span>
-<span class="sd">    model.  Constant naming convention is intentionally not used since the </span>
-<span class="sd">    values defined here may be updated in the future by introducing other</span>
-<span class="sd">    geopotential models</span>
+    <span class="sd">&quot;&quot;&quot;Class used to represent Earth.  </span>
+<span class="sd">    </span>
+<span class="sd">    Values are defined using EGM96 geopotential model.  Constant naming </span>
+<span class="sd">    convention is intentionally not used since the values defined here may be </span>
+<span class="sd">    updated in the future by introducing other geopotential models</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        mu:                 gravitational constant times body mass</span>
+<span class="sd">        equatorial_radius:  measure from body center to surface along equator</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">mu</span> <span class="o">=</span> <span class="mf">3.986004415e5</span> <span class="c1">#km^3/s^2</span>
     <span class="n">equatorial_radius</span> <span class="o">=</span> <span class="mf">6378.1363</span> <span class="c1">#km</span>
 </pre></div>
 </div>
-<p>Here we define a class that contains some key characteristics of Earth. Usually a class would contain an _<em>init</em>_ method; however, we will omit that for classes like this because we will not want to instantiate new objects each time we need Earth.</p>
 <p>Also, we have used a naming convention of all lowercase for our variables. A naming convention of all uppercase would have been used if these values were intended to be constant. Instead, we are preparing for future revisions of the code that may allow changing from one geopotential model to another.</p>
 </section>
 </section>

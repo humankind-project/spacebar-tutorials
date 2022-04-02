@@ -10,7 +10,7 @@ oxa: oxa:zyBWlmnbnltDRPejFqwi/pbXeJXnaITQbVuUlGull
 
 # Module 1
 
-+++ {"oxa":"oxa:zyBWlmnbnltDRPejFqwi/FtMoswhFlFZxePlGYNO0.17"}
++++ {"oxa":"oxa:zyBWlmnbnltDRPejFqwi/FtMoswhFlFZxePlGYNO0.19"}
 
 This document contains the basic steps needed to create a distribution-ready python project. The intent in this document as well as future documents is to provide concise details of how to perform the tasks while minimizing unnecessary background details. An overview of the material covered in this module is below.
 
@@ -122,17 +122,19 @@ The \__init_\_.py files will be empty, but they will be necessary for Python to 
 
 ```python
 class Earth:
-    """
-    Class used to represent Earth.  Values are defined using EGM96 geopotential
-    model.  Constant naming convention is intentionally not used since the 
-    values defined here may be updated in the future by introducing other
-    geopotential models
+    """Class used to represent Earth.  
+    
+    Values are defined using EGM96 geopotential model.  Constant naming 
+    convention is intentionally not used since the values defined here may be 
+    updated in the future by introducing other geopotential models
+
+    Attributes:
+        mu:                 gravitational constant times body mass
+        equatorial_radius:  measure from body center to surface along equator
     """
     mu = 3.986004415e5 #km^3/s^2
     equatorial_radius = 6378.1363 #km
 ```
-
-Here we define a class that contains some key characteristics of Earth. Usually a class would contain an \__init_\_ method; however, we will omit that for classes like this because we will not want to instantiate new objects each time we need Earth.
 
 Also, we have used a naming convention of all lowercase for our variables. A naming convention of all uppercase would have been used if these values were intended to be constant. Instead, we are preparing for future revisions of the code that may allow changing from one geopotential model to another.
 

@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 3" href="module-3.html" />
     <link rel="prev" title="Module 1" href="module-1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -100,6 +101,21 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Module 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-3.html">
+   Module 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-4.html">
+   Module 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-5.html">
+   Module 5
   </a>
  </li>
 </ul>
@@ -231,6 +247,11 @@ const thebe_selector_output = ".output, .cell_output"
      Remaining Methods
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tests">
+     Tests
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -293,6 +314,11 @@ const thebe_selector_output = ".output, .cell_output"
      Remaining Methods
     </a>
    </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tests">
+     Tests
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -310,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="create-paths">
 <h1>Create Paths<a class="headerlink" href="#create-paths" title="Permalink to this headline">¶</a></h1>
-<p>Start by creating a path within your package that creates an intuitive trail for the user. This will be a script full of linear algebra functions used for the entire package, so let’s use spacebar &gt; math &gt; <a class="reference external" href="http://linalg.py">linalg.py</a> to get a folder structure similar to the list seen below.</p>
+<p>Start by creating a path within your package that creates an intuitive trail for the user. This will be a script full of linear algebra functions used for the entire package, so let’s use spacebar &gt; math &gt; <a class="reference external" href="http://linalg.py">linalg.py</a> to get a folder structure similar to the list seen below. Note we will also add the corresponding test files at this point.</p>
 <ul class="simple">
 <li><p>spacebar</p>
 <ul>
@@ -323,7 +349,16 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li><p>astro</p></li>
-<li><p>tests</p></li>
+<li><p>tests</p>
+<ul>
+<li><p>math</p>
+<ul>
+<li><p>test_linalg.py</p></li>
+<li><p>_<em>init</em>_.py</p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -517,6 +552,83 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </section>
+<section id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<p>Now we can add our test module.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="kn">from</span> <span class="nn">spacebar.math.linalg</span> <span class="kn">import</span> <span class="n">Vector3D</span>
+
+<span class="k">class</span> <span class="nc">TestVector3D</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="n">VECTOR_1</span> <span class="o">=</span> <span class="n">Vector3D</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+    <span class="n">VECTOR_2</span> <span class="o">=</span> <span class="n">Vector3D</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_plus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify vector addition</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">plus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_minus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify vector subtraction</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">minus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_dot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify vector dot product</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">184</span><span class="p">,</span> <span class="n">answer</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_cross</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify vector cross product</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="o">-</span><span class="mi">1760</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_magnitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify the vector magnitude</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">446</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">magnitude</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">test_normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify the unit vector</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">normalize</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">446</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">446</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">21</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">446</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify the ability to scale a vector</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">84</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now finish up by running your new test script to confirm success. Navigate to the top level directory and execute the following command from the terminal.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m unittest .
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -550,6 +662,13 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Module 1</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="module-3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 3</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
