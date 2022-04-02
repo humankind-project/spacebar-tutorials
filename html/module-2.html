@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Module 2 &#8212; Spacebar Python Tutorial</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 3" href="module-3.html" />
+    <link rel="prev" title="Module 1" href="module-1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Spacebar Python Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-1.html">
+   Module 1
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Module 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-3.html">
+   Module 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-4.html">
+   Module 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="module-5.html">
+   Module 5
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Written in <a href="https://curvenote.com">Curvenote</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/module-2.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://curvenote.com/@sextonb/spacebar"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://curvenote.com/@sextonb/spacebar/issues/new?title=Issue%20on%20page%20%2Fmodule-2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/@sextonb/spacebar/edit/master/module-2.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Module 2
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-paths">
+   Create Paths
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code">
+   Code
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class-definitions">
+     Class Definitions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-self-argument">
+     The “self” Argument
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#type-hinting">
+     Type-hinting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting">
+     Formatting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remaining-methods">
+     Remaining Methods
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tests">
+     Tests
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Module 2</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Module 2
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-paths">
+   Create Paths
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code">
+   Code
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class-definitions">
+     Class Definitions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-self-argument">
+     The “self” Argument
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#type-hinting">
+     Type-hinting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting">
+     Formatting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remaining-methods">
+     Remaining Methods
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tests">
+     Tests
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="module-2">
+<h1>Module 2<a class="headerlink" href="#module-2" title="Permalink to this headline">¶</a></h1>
+<p>Module 2 focuses on the development of vector operations within our script. The majority of the calculations performed in future astrodynamics modules will require vector math, so it is important to build that foundational library early.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="create-paths">
+<h1>Create Paths<a class="headerlink" href="#create-paths" title="Permalink to this headline">¶</a></h1>
+<p>Start by creating a path within your package that creates an intuitive trail for the user. This will be a script full of linear algebra functions used for the entire package, so let’s use spacebar &gt; math &gt; <a class="reference external" href="http://linalg.py">linalg.py</a> to get a folder structure similar to the list seen below. Note we will also add the corresponding test files at this point.</p>
+<ul class="simple">
+<li><p>spacebar</p>
+<ul>
+<li><p>spacebar</p>
+<ul>
+<li><p>math</p>
+<ul>
+<li><p><a class="reference external" href="http://linalg.py">linalg.py</a></p></li>
+<li><p>_<em>init</em>_.py</p></li>
+</ul>
+</li>
+<li><p>astro</p></li>
+<li><p>tests</p>
+<ul>
+<li><p>math</p>
+<ul>
+<li><p>test_linalg.py</p></li>
+<li><p>_<em>init</em>_.py</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="code">
+<h1>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h1>
+<section id="class-definitions">
+<h2>Class Definitions<a class="headerlink" href="#class-definitions" title="Permalink to this headline">¶</a></h2>
+<p>Before showing the entire code block, take a look at the constructor class for a Vector3D object. This class has a new method that was omitted when we created the Earth object in <span class="xref myst">Module 1</span>. We intentionally bypassed the constructor for Earth because we only want to use one Earth in our future modules. Vectors, though, will need a method to create new instances. Thus, you see the _<em>init</em>_ method to construct new Vector3D objects. This will be a required method for any classes we create that are to be used in more than one instance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">class</span> <span class="nc">Vector3D</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;three-dimensional vector used for basic linear algebra</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x:      The first component of the vector</span>
+<span class="sd">            y:      The second component of the vector</span>
+<span class="sd">            z:      The third component of the vector</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+</pre></div>
+</div>
+</section>
+<section id="the-self-argument">
+<h2>The “self” Argument<a class="headerlink" href="#the-self-argument" title="Permalink to this headline">¶</a></h2>
+<p>You might find it weird that we are required to pass “self” as an argument to this method and future methods you see. This is just a way of informing Python that this is a non-static method. Static vs non-static methods are represented in the code block below. Note that this block is purely for demonstration of static methods and is not required for our package</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Motorcycle</span><span class="p">:</span>
+  
+  	<span class="n">WHEEL_COUNT</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># This is all caps to indicate it is a constant</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">top_speed</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">top_speed</span> <span class="o">=</span> <span class="n">top_speed</span>
+        
+    <span class="k">def</span> <span class="nf">get_top_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># Notice the use of self</span>
+        <span class="sd">&quot;&quot;&quot;This is a non-static method because you MUST create an instance of motorcycle</span>
+<span class="sd">        to know what the top speed is</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">top_speed</span>
+      
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_wheel_count</span><span class="p">():</span> <span class="c1"># Notice the removal of self</span>
+        <span class="sd">&quot;&quot;&quot;This is a static method because you can call it without defining a new </span>
+<span class="sd">        motorcycle.  We can define it as a static method because it pertains to ALL motorcycles</span>
+<span class="sd">        instead of a single instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">WHEEL_COUNT</span>
+</pre></div>
+</div>
+</section>
+<section id="type-hinting">
+<h2>Type-hinting<a class="headerlink" href="#type-hinting" title="Permalink to this headline">¶</a></h2>
+<p>Another thing you likely noticed is the colon pairing variable definition with object types. This is called type-hinting. It allows future developers and IDEs to easily identify what types of objects to pass and receive when using your methods.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>In the example above, x:float means x must be a float while the -&gt; None says the method returns nothing when it is constructed.</p>
+</section>
+<section id="formatting">
+<h2>Formatting<a class="headerlink" href="#formatting" title="Permalink to this headline">¶</a></h2>
+<p>I won’t go into too much detail regarding the formatting of the comments within the code, but you should know that it is important to choose a standard method of documenting your code. To follow the guidelines in this tutorial, you can research <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/example_google.html">google formatting for python</a>.</p>
+</section>
+<section id="remaining-methods">
+<h2>Remaining Methods<a class="headerlink" href="#remaining-methods" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve discussed the added content for this module, let’s look at the full script.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">class</span> <span class="nc">Vector3D</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;three-dimensional vector used for basic linear algebra</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x:      The first component of the vector</span>
+<span class="sd">            y:      The second component of the vector</span>
+<span class="sd">            z:      The third component of the vector</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+
+    <span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vec_to_add</span><span class="p">:</span><span class="s2">&quot;Vector3D&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Vector3D&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Performs vector addition</span>
+
+<span class="sd">        Args:       </span>
+<span class="sd">            vec_to_add:     The vector which will be added to the calling vector</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            AVector representing element addition of self and vec_to_add</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Vector3D</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">vec_to_add</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">vec_to_add</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">+</span> <span class="n">vec_to_add</span><span class="o">.</span><span class="n">z</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vec_to_subtract</span><span class="p">:</span><span class="s2">&quot;Vector3D&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Vector3D&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Performs vector subtraction</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            vec_to_subtract:    The vector which will be subtracted from self</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Vector representing element difference of self and vec_to_subtract</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Vector3D</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">vec_to_subtract</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">vec_to_subtract</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">vec_to_subtract</span><span class="o">.</span><span class="n">z</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vec_to_dot</span><span class="p">:</span><span class="s2">&quot;Vector3D&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Performs dot product</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            vec_to_dot:     The vector to be used in the product with self</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            scalar value representing sum of element multiplication</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">vec_to_dot</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">vec_to_dot</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">*</span><span class="n">vec_to_dot</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="k">def</span> <span class="nf">cross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vec_to_cross</span><span class="p">:</span><span class="s2">&quot;Vector3D&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Vector3D&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Performs cross product</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            vec_to_cross:   The vector to be used in the product with self</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Vector perpendicular to self and vec_to_cross </span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Vector3D</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">vec_to_cross</span><span class="o">.</span><span class="n">z</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">*</span><span class="n">vec_to_cross</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">*</span><span class="n">vec_to_cross</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">vec_to_cross</span><span class="o">.</span><span class="n">z</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">vec_to_cross</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">vec_to_cross</span><span class="o">.</span><span class="n">x</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Vector3D&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Method used to get the unit vector for the calling vector</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Vector parallel to self and of length 1</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">magnitude</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Vector3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">/</span><span class="n">mag</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">/</span><span class="n">mag</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">/</span><span class="n">mag</span><span class="p">)</span>
+        
+
+    <span class="k">def</span> <span class="nf">magnitude</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Method used to get the length of the calling vector</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Square root of the sum of squared components</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">multiple</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Vector3D&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Method used to scale each element by the specified multiple</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            multiple:   value to be multiplied across elements</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Vector parallel to self with a scaled magnitude </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Vector3D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">multiple</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">multiple</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="o">*</span><span class="n">multiple</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<p>Now we can add our test module.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="kn">from</span> <span class="nn">spacebar.math.linalg</span> <span class="kn">import</span> <span class="n">Vector3D</span>
+
+<span class="k">class</span> <span class="nc">TestVector3D</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="n">VECTOR_1</span> <span class="o">=</span> <span class="n">Vector3D</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+    <span class="n">VECTOR_2</span> <span class="o">=</span> <span class="n">Vector3D</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_plus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify vector addition</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">plus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_minus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify vector subtraction</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">minus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_dot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify vector dot product</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">184</span><span class="p">,</span> <span class="n">answer</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_cross</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify vector cross product</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="o">-</span><span class="mi">1760</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="n">answer</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_magnitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify the vector magnitude</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">446</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">magnitude</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">test_normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify the unit vector</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">normalize</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">446</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">446</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">21</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">446</span><span class="p">),</span> <span class="n">u</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test to verify the ability to scale a vector</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">VECTOR_1</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">84</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now finish up by running your new test script to confirm success. Navigate to the top level directory and execute the following command from the terminal.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m unittest .
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="module-1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Module 1</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="module-3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 3</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By sextonb<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
